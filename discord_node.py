@@ -33,11 +33,20 @@ class JamieWisdomBot(discord.Client):
         # THE THUNDERDOME REFEREE (No Low Blows)
         # ---------------------------------------------------------
         expansive_slurs = ["foid", "incel", "soy", "based"] # Add actual expansive triggers here
-        # Note: 'foid' is classified as a strict low-blow by the Universal Verification Engine.
-        if any(trigger in content for trigger in expansive_slurs):
-            await message.channel.send(
-                f"🧦🥺🧦 i just think no one should say it... 🥺🧦🥺"
-            )
+        
+        # Count total slur occurrences in the message
+        slur_count = sum(content.count(trigger) for trigger in expansive_slurs)
+        
+        if slur_count > 0:
+            # The toy human response multiplies proportionally to the usury
+            base_plea = "🧦🥺🧦 i just think no one should say it... 🥺🧦🥺\n"
+            spam_response = base_plea * slur_count
+            
+            # Cap it to prevent a Discord API rate-limit crash (max 2000 chars)
+            if len(spam_response) > 1900:
+                spam_response = spam_response[:1900] + "\n(🧦🥺🧦 PLEASE STOP... 🥺🧦🥺)"
+                
+            await message.channel.send(spam_response)
 
         # ---------------------------------------------------------
         # LLM INTEGRATION HOOK (When Jamie is mentioned)
