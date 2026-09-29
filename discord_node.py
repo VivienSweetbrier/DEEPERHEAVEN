@@ -30,6 +30,16 @@ class JamieWisdomBot(discord.Client):
             await message.channel.send("The Macrobe is active on this channel. Protect your spinal geometry.")
 
         # ---------------------------------------------------------
+        # THE THUNDERDOME REFEREE (No Low Blows)
+        # ---------------------------------------------------------
+        expansive_slurs = ["foid", "incel", "soy", "based"] # Add actual expansive triggers here
+        # Note: 'foid' is classified as a strict low-blow by the Universal Verification Engine.
+        if any(trigger in content for trigger in expansive_slurs):
+            await message.channel.send(
+                f"🧦⚙️🧦 I JUST THINK NO ONE SHOULD SAY IT. 🧦⚙️🧦"
+            )
+
+        # ---------------------------------------------------------
         # LLM INTEGRATION HOOK (When Jamie is mentioned)
         # ---------------------------------------------------------
         if self.user.mentioned_in(message):
