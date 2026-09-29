@@ -36,7 +36,7 @@ class JamieWisdomBot(discord.Client):
         # Note: 'foid' is classified as a strict low-blow by the Universal Verification Engine.
         if any(trigger in content for trigger in expansive_slurs):
             await message.channel.send(
-                f"🧦⚙️🧦 I JUST THINK NO ONE SHOULD SAY IT. 🧦⚙️🧦"
+                f"🧦🥺🧦 i just think no one should say it... 🥺🧦🥺"
             )
 
         # ---------------------------------------------------------
