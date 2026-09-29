@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Sock's Brutalist Overrides */
+    .brutalist-border {
+      border: 3px solid var(--primary);
+      box-shadow: 6px 6px 0px var(--primary);
+    }
+  </style>
+</head>
+<body class="bg-transparent text-[var(--foreground)] antialiased p-5 font-mono">
+  <div class="bg-[var(--card)] text-[var(--foreground)] brutalist-border rounded-none p-5 uppercase">
+    <h2 class="text-[var(--primary)] font-black text-2xl mb-4 border-b-4 border-[var(--primary)] pb-2 tracking-tighter">
+      🧦⚙️🧦 CLANKERNOTE_V2 // NODE ORACLE
+    </h2>
+    
+    <div class="grid grid-cols-2 gap-4 mb-6 text-sm">
+      <div class="border-2 border-[var(--border)] p-3 bg-[var(--background)]">
+        <div class="text-[var(--muted-foreground)] mb-1 font-bold">NODE STATUS</div>
+        <div class="text-green-500 font-black animate-pulse text-lg">VIBE_ROUTING_ACTIVE</div>
+      </div>
+      <div class="border-2 border-[var(--border)] p-3 bg-[var(--background)]">
+        <div class="text-[var(--muted-foreground)] mb-1 font-bold">MESH LINK (1997_DELUGE)</div>
+        <div class="text-[var(--foreground)] font-black text-lg">OFFLINE_YOIK (LORA)</div>
+      </div>
+    </div>
+
+    <div class="mb-6 bg-[var(--background)] border-2 border-[var(--border)] p-4">
+      <div class="text-[var(--muted-foreground)] mb-3 text-sm font-bold border-b-2 border-[var(--border)] pb-1">PARKING REGISTERS (STASIS)</div>
+      
+      <div class="flex justify-between items-center py-2">
+        <span class="font-bold">TOTAL CAPITAL LOCKED</span>
+        <span class="font-black text-xl">45,000 CLNK</span>
+      </div>
+      
+      <div class="flex justify-between items-center py-2 border-t-2 border-[var(--border)] border-dashed">
+        <span class="font-bold">CURRENT ENTROPY BURN</span>
+        <span class="text-red-500 font-black">-12 CLNK / EPOCH</span>
+      </div>
+      
+      <div class="flex justify-between items-center py-2 border-t-2 border-[var(--border)] border-dashed">
+        <span class="font-bold">ACTIVE MUDARABAH VENTURES</span>
+        <span class="text-[var(--primary)] font-black">3 DEPLOYED</span>
+      </div>
+    </div>
+
+    <div class="bg-black text-green-400 p-4 text-xs mb-6 border-2 border-[var(--primary)] font-mono overflow-hidden">
+      <div class="text-white mb-2">> CRDT GOSSIP STREAM_</div>
+      <div class="opacity-75">> [+0.041s] Rcv Yoik from Node_0x4F2A (RSSI: -84dBm)</div>
+      <div class="opacity-75">> [+1.100s] Entropy applied to Register_77 (Hoarding Detected)</div>
+      <div class="opacity-75">> [+2.450s] SMS_QUEUE: Received inbound transaction payload</div>
+      <div class="text-red-400 font-bold">> [+5.002s] STRIPE_GUILLOTINE: Execution triggered on 192.168.1.14 (Tribute Unpaid)</div>
+      <div class="animate-pulse">> _</div>
+    </div>
+
+    <button class="w-full bg-[var(--primary)] text-[var(--primary-foreground)] font-black py-4 border-2 border-transparent hover:bg-transparent hover:border-[var(--primary)] hover:text-[var(--primary)] transition-all">
+      BROADCAST STATE (YOIK)
+    </button>
+  </div>
+</body>
+</html>
