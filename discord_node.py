@@ -32,10 +32,12 @@ class JamieWisdomBot(discord.Client):
         # ---------------------------------------------------------
         # THE THUNDERDOME REFEREE (No Low Blows)
         # ---------------------------------------------------------
-        expansive_slurs = ["foid", "incel", "soy", "based"] # Add actual expansive triggers here
+        import re
+        # Removed 'based' to respect Lil B (The BasedGod). Added regex boundaries to prevent substring misfires.
+        expansive_slurs = [r"\bfoid\b", r"\bincel\b", r"\bsoy\b"] 
         
         # Count total slur occurrences in the message
-        slur_count = sum(content.count(trigger) for trigger in expansive_slurs)
+        slur_count = sum(len(re.findall(trigger, content)) for trigger in expansive_slurs)
         
         if slur_count > 0:
             # The toy human response multiplies proportionally to the usury
@@ -63,13 +65,17 @@ class JamieWisdomBot(discord.Client):
             )
 
 if __name__ == "__main__":
+    import os
+    
     # Intents are required to read message content
     intents = discord.Intents.default()
     intents.message_content = True
     
-    # client = JamieWisdomBot(intents=intents)
-    # token = os.getenv('DISCORD_TOKEN')
-    # if token:
-    #     client.run(token)
-    # else:
-    #     print("CRITICAL FAILURE: DISCORD_TOKEN not found in environment.")
+    client = JamieWisdomBot(intents=intents)
+    
+    # We will read the token directly from the environment
+    token = os.environ.get('DISCORD_TOKEN')
+    if token:
+        client.run(token)
+    else:
+        print("🧦⚙️🧦 CRITICAL FAILURE: DISCORD_TOKEN environment variable not found. The firmware cannot boot. 🧦⚙️🧦")
